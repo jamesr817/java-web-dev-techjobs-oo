@@ -107,7 +107,7 @@ public class JobTest{
 
         //TODO: Why is it the test below pass only when there's a print statement above it?
         //TODO: Is this how it's suppose to be, or did I do something wrong in the test or toString() in Jobs.java?
-        System.out.println(demoJobC);
+        //System.out.println(demoJobC);
 
         assertThat("\n" +
                 "ID: " + demoJobC.getId() + "\n" +
