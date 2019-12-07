@@ -3,6 +3,8 @@ package org.launchcode.techjobs_oo.Tests;
 import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
+import org.w3c.dom.ls.LSOutput;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -69,19 +71,32 @@ public class JobTest{
                 "ID: " + demoJobB.getId() + "\n" +
                 "Name: " + demoJobB.getName() + "\n" +
                 "Employer: " + demoJobB.getEmployer() + "\n" +
-                "Location: " + demoJobB.getLocation()+ "\n" +
+                "Location: " + demoJobB.getLocation() + "\n" +
                 "Position Type: " + demoJobB.getPositionType().getValue() + "\n" +
-                "Core Competency: " + demoJobB.getCoreCompetency() + "\n",is(demoJobB.toString())
+                "Core Competency: " + demoJobB.getCoreCompetency() + "\n", is(demoJobB.toString())
         );
 
         assertThat("\n" +
-                "ID: " + demoJobC.getId() + "\n" +
-                "Name: " + "Data not available" + "\n" +
-                "Employer: " + demoJobC.getEmployer() + "\n" +
-                "Location: " + demoJobC.getLocation()+ "\n" +
-                "Position Type: " + demoJobC.getPositionType().getValue() + "\n" +
-                "Core Competency: " + demoJobC.getCoreCompetency() + "\n",
-                is(demoJobC.toString()));
+                        "ID: " + demoJobC.getId() + "\n" +
+                        "Name: " + "Data not available" + "\n" +
+                        "Employer: " + demoJobC.getEmployer() + "\n" +
+                        "Location: " + demoJobC.getLocation() + "\n" +
+                        "Position Type: " + demoJobC.getPositionType().getValue() + "\n" +
+                        "Core Competency: " + demoJobC.getCoreCompetency() + "\n",
+                is(demoJobC.toString())
+        );
+        System.out.println(demoJobD);
+        assertThat("OOPS! This job does not seem to exist.", is(demoJobD.toString()));
+
+        //        assertThat("\n" +
+//                        "ID: " + demoJobD.getId() + "\n" +
+//                        "Name: " + demoJobD.getName() + "\n" +
+//                        "Employer: " + demoJobD.getEmployer() + "\n" +
+//                        "Location: " + demoJobD.getLocation()+ "\n" +
+//                        "Position Type: " + demoJobD.getPositionType().getValue() + "\n" +
+//                        "Core Competency: " + demoJobD.getCoreCompetency() + "\n",
+//                is(demoJobD.toString()));
+//    }
 
     }
 }

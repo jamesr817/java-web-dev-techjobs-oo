@@ -101,9 +101,15 @@ public class Job {
     @Override
     public String toString() {
         String fillIn ="\n" + "ID: " + getId() + "\n";
+        String notFound = "\n" + "ID: " + getId() + "\n";
+        String dna_Message = "Name: Data not available";
+        String  nF_message = "OOPS! This job does not seem to exist.";
 
+        if(name.isBlank() && employer.getValue().isBlank() && location.getValue().isBlank() &&
+                positionType.getValue().isBlank() && coreCompetency.getValue().isBlank()) {
+            return nF_message;
 
-        if (name.isBlank()){
+        }else if (name.isBlank()){
             fillIn += "Name: Data not available" + "\n" ;
         }else {
             fillIn += "Name: " + name + "\n";
@@ -132,7 +138,7 @@ public class Job {
         }else {
             fillIn += "Core Competency: " + coreCompetency.getValue() + "\n";
         }
-
-        return fillIn;
+            return fillIn;
     }
+
 }
